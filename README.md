@@ -1,15 +1,15 @@
-## Housing-in-Landon
+# Housing-in-Landon
 This project is about the housing market of London in the years between 1995 and 2020. 
 
 I had performed exploratory data analysis with the goal of discovering new information and answering the following questions:
 1. How has the housing market (average house price and number of houses sold) changed over the years in different boroughs of London? How does it compare to England?
 2. What factors affected it the most?
 
-# Libraries
+## Libraries
 
 I start by importing the necessary libraries and setting some parameters for the whole notebook (e.g. the display format for the pandas library).
 
-# Datasets
+## Datasets
 
 I am going to use the [Housing in London]dataset. It contains two csv files (housing_in_london_monthly_variables.csv and housing_in_london_yearly_variables.csv) with a lot of relevant information such as the monthly average house prices, yearly mean and median salary for residents of each area, etc.
 
@@ -17,7 +17,7 @@ The data is split by areas of London called boroughs, but some of the instances 
 
 Additionally, I am going to use a third dataset for plotting maps (London Borough and Ward Boundaries up to 2014 )
 
-# Housing over the Years
+## Housing over the Years
 
 I am going to focus on the average price and the number of houses sold in each area. 
 
@@ -32,15 +32,15 @@ Two attributes, 'houses_sold' and 'no_of_crimes', have missing values. I shall d
 
 It's easier to replace missing values in the 'houses_sold' attribute as only a small portion is missing. I shall use the mean value for the same area for all years in each case. Of course, someone could argue that this number would change over the years, but I could assume that the final results won't be affected due to small number of values being changed.
 
-# Data Exploration
+## Data Exploration
 
 According to Google, there are 33 boroughs in London (32 + the City of London). Is that the case in our dataset?
 It is! How many and which regions are outside of London?
 
-# London VS England
+## London VS England
 I can now split the dataset into two: one for boroughs in London and one for the other regions of England:
 
-# Average Price
+## Average Price
 
 The `groupby()` method allows us to calculate the mean 'average price' for each 'date':
 In overall, the average price follows an upward trend during the studied time frame, with London always having a higher average price. 
@@ -50,11 +50,11 @@ The number of houses sold in London dropped sharply during the financial recessi
 - Interestingly, there is spike in March 2016 which at first sight looks like an artefact. That is not the case, because people were actually trying to avoid a new legislation that came into effect in April 2016 and imposed an increase in the tax bill on buying a second home. 
 - Again, the referendum resulted in a downward trend starting from July 2016.
 
-# Factors Affecting Housing
+## Factors Affecting Housing
 
-# Preparing the Final Dataset
+### Preparing the Final Dataset
 
-# Correlation
+## Correlation
 
 For this question I need to import the third and final dataset (housing_in_london_yearly_variables) which I am going to merge with the monthly dataset.
 It doesn't come as a surprise that apart from the year, the average price in London has a significant positive correlation with the median and mean salary along with the number of jobs in a borough. 
@@ -62,7 +62,7 @@ It doesn't come as a surprise that apart from the year, the average price in Lon
 - As I discussed earlier, the most affluent boroughs happen to be small (see map) which explains the negative correlation with the size of an area. 
 - The average price is also affected by the number of houses sold, since the former goes up when the later decreases (people sell higher when less houses are sold?).
 
-## Conclusions
+# Conclusions
 
 The main conclusions are the following:
 
